@@ -111,20 +111,18 @@ public class MovieRepositoryTest {
     }
     @Test
     public void saveArtist(){
-        Artist savedArtist = artistsRepository.save(Artist.builder().firstName("Rock").lastName("Rock").age(45).bio("bio").build());
+        Artist savedArtist = artistsRepository.save(Artist.builder().name("Rock").build());
         assertNotNull(savedArtist.getId());
 
         Artist artist = artistsRepository.findById(savedArtist.getId()).get();
         assertThat(artist).hasFieldOrPropertyWithValue("id",savedArtist.getId());
-        assertThat(artist).hasFieldOrPropertyWithValue("firstname","Rock");
-        assertThat(artist).hasFieldOrPropertyWithValue("lastname","Rock");
-        assertThat(artist).hasFieldOrPropertyWithValue("age",45);
-        assertThat(artist).hasFieldOrPropertyWithValue("bio","Hello");
+        assertThat(artist).hasFieldOrPropertyWithValue("name","Rock");
+
 
     }
     @Test
     public void findArtist(){
-        Artist artist = artistsRepository.save(Artist.builder().firstName("Rock").lastName("Rock").age(45).bio("bio").build());
+        Artist artist = artistsRepository.save(Artist.builder().name("Rock").build());
         assertNotNull(artist.getId());
         entityManager.persist(artist);
         Iterable<Artist> artists = artistsRepository.findAll();
@@ -132,23 +130,23 @@ public class MovieRepositoryTest {
     }
     @Test
     public void delete_all_artists(){
-        Artist artist1 = artistsRepository.save(Artist.builder().firstName("Rock").lastName("Rock").age(45).bio("bio").build());
+        Artist artist1 = artistsRepository.save(Artist.builder().name("Rock").build());
         assertNotNull(artist1.getId());
         entityManager.persist(artist1);
-        Artist artist2 = artistsRepository.save(Artist.builder().firstName("Dwayne").lastName("Johnson").age(45).bio("bio").build());
+        Artist artist2 = artistsRepository.save(Artist.builder().name("Dwayne").build());
         assertNotNull(artist2.getId());
         entityManager.persist(artist2);
-        Artist artist3 = artistsRepository.save(Artist.builder().firstName("zzz").lastName("xxx").age(45).bio("bio").build());
+        Artist artist3 = artistsRepository.save(Artist.builder().name("zzz").build());
         assertNotNull(artist3.getId());
         entityManager.persist(artist3);
         artistsRepository.deleteAll();
     }
     @Test
     public void delete_artist_by_id(){
-        Artist artist1 = artistsRepository.save(Artist.builder().firstName("Rock").lastName("Rock").age(45).bio("bio").build());
+        Artist artist1 = artistsRepository.save(Artist.builder().name("Rock").build());
         assertNotNull(artist1.getId());
         entityManager.persist(artist1);
-        Artist artist2 = artistsRepository.save(Artist.builder().firstName("Dwayne").lastName("Johnson").age(45).bio("bio").build());
+        Artist artist2 = artistsRepository.save(Artist.builder().name("dwayne").build());
         assertNotNull(artist2.getId());
         entityManager.persist(artist2);
         artistsRepository.deleteById(artist1.getId());
