@@ -1,0 +1,292 @@
+<html>
+<head>
+    <title>Movie</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link href="assets/fa/css/all.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body bgcolor="yellow">
+
+
+<div id="mainContainer">
+    <div id="header" class="row" style="background-color:#3561a2;">
+        <div class="col-md-12">
+            <div class="row" style="margin:10px;">
+                <div class="col-md-2">
+                    <h1 style="float:left;color: darkorange;">Movies App</h1>
+                </div>
+                <div class="col-md-9"></div>
+                <div class="col-md-1">
+                    <button id="logoutFormBtn" type="button" class="btn btn-primary" style="float:right;margin-top:10px;">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height:40px;">
+        <div class="col-md-12">
+        </div>
+    </div>
+    <div id="adminContainer" class="row">
+        <div id="adminListingContainer" class="col-md-12">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a id="moviesTab" class="admin-listing-tab nav-link active" aria-current="page" href="#">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a id="artistsTab" class="admin-listing-tab nav-link" href="#">Artists</a>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-md-10"> </div>
+                <div class="col-md-2">
+                    <button id="addArtistBtn" type="button" class="btn btn-primary" style="display:none; margin-top: 10px;margin-right: 10px;float: right;">Add Artist</button>
+                    <button id="addMovieBtn" type="button" class="btn btn-primary" style=" margin-top: 10px;margin-right: 10px;float: right;">Add Movie</button>
+                </div>
+            </div>
+
+            <div id="adminListingContent">
+
+            </div>
+        </div>
+        <div id="adminDetailContainer" style="display:none" class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="backToAdminMovies" style="margin-left:30px;">< Back to Movies</button>
+                </div>
+            </div>
+            <div class="row" style="height:20px;">
+                <div class="col-md-12"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="padding-left: 30px;">
+                    <form>
+                        <input type="hidden" id="moviesFormId" value="">
+
+                        <div class="form-group">
+                            <label for="moviesFormTitle">Title</label>
+                            <input type="text" class="form-control" id="moviesFormTitle" aria-describedby="emailHelp"
+                                   placeholder="Enter title">
+                        </div>
+                        <div class="form-group">
+                            <label for="moviesFormGenre">Genre</label>
+                            <input type="text" class="form-control" id="moviesFormGenre" placeholder="Genre">
+                        </div>
+                        <div class="form-group">
+                            <label for="moviesFormReleaseYear">Release Year</label>
+                            <input type="text" class="form-control" id="moviesFormReleaseYear" placeholder="Release Year">
+                        </div>
+                        <div class="form-group">
+                            <label for="moviesFormImageUrl">Image Url</label>
+                            <input type="text" class="form-control" id="moviesFormImageUrl" placeholder="Image Url">
+                        </div>
+                        <div class="form-group">
+                            <label for="moviesFormMovieRating">Movie Rating</label>
+                            <input type="text" class="form-control" id="moviesFormMovieRating" placeholder="Movie Rating">
+                        </div>
+                        <div class="form-group">
+                            <label for="moviesFormRunTime">Run Time</label>
+                            <input type="text" class="form-control" id="moviesFormRunTime" placeholder="Run Time">
+                        </div>
+                        <div class="form-group">
+                            <label for="moviesFormImdbRating">Imdb Rating</label>
+                            <input type="text" class="form-control" id="moviesFormImdbRating" placeholder="Imdb Rating">
+                        </div>
+                        <div class="form-group">
+                            <label for="moviesFormDescription">Description</label>
+                            <textarea class="form-control" id="moviesFormDescription" rows="5" style="width:100%;" placeholder="Description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button id="moviesFormSaveBtn" type="button" class="btn btn-primary" style="margin-top:10px;float:right;">Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6" style="margin-top:23px;padding-right:30px;">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="addDirector">
+                                        <span style="font-size:20px;font-weight:bold;">Director(s)</span> <button id="addDirectorBtn" type="button" class="btn btn-link btn-sm">add new</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" id="movieDirectors">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="addActor">
+                                        <span style="font-size:20px;font-weight:bold;">Actor(s)</span><button id="addActorBtn" type="button" class="btn btn-link btn-sm">add new</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" id="movieActors">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="userContainer" style="display:none" class="row">
+        <div id="moviesContainer" class="col-md-12">
+        </div>
+        <div id="movieDetailContainer" style="display:none" class="col-md-12">
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-10" style="padding-left: 0px;padding-bottom: 5px;">
+                    <button id="backToMovies" class="btn btn-light btn-sm">< Back</button>
+                </div>
+                <div class="col-md-1">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color: #363635;color: white;">
+                    <div class="row" style="border-bottom-style: solid;border-bottom-width: thin;border-color: #c1c1c1;border-left-style: solid;border-left-width: thin;border-top-style: solid;border-top-width: thin;border-right-style: solid;border-right-width: thin;">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span id="movieTitle" style="font-size: 45px;font-weight: bold;font-family: sans-serif;"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span id="releaseYear"></span><i class="fas fa-circle movie-separator" ></i>
+                                    <span id="movieRating"></span><i class="fas fa-circle movie-separator" ></i>
+                                    <span id="runTime"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+
+                        </div>
+                        <div class="col-md-1" style="padding-top:28px;    text-align: right;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span style="font-weight: bold;font-size: 12px;font-family: sans-serif;">IMDb RATING</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <i class="fas fa-star" style="color: #d88a00;margin-right: 5px;"></i><span id="imdbRating"></span>/10
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="row" style="border-left-style: solid;border-left-width: thin;border-bottom-style: solid;border-bottom-width: thin;border-right-style: solid;border-right-width: thin;border-color: #c1c1c1;padding-bottom: 15px;">
+                        <div class="col-md-2">
+                            <img id="movieImage" class="mx-auto d-block" src="" style="width:165px;margin-top:20px">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="row" >
+                                <div class="col-md-11" style="padding-top: 20px;border-bottom-style: solid;border-bottom-width: thin;border-bottom-color: #c1c1c1;">
+                                    <span class="badge rounded-pill bg-dark" id="genre" style="width:120px;"></span>
+                                    <p id="description" style="margin-top: 10px;"></p>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-11" style="height:50px; border-bottom-style: solid;border-bottom-width: thin;border-bottom-color: #c1c1c1;    padding-top: 10px;">
+                                    <span style="    font-weight: bold;">Actors</span> <span id="actors"></span>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-11" style="height:50px; border-bottom-style: solid;border-bottom-width: thin;border-bottom-color: #c1c1c1;    padding-top: 10px;">
+                                    <span style="font-weight: bold;">Directors</span> <span id="directors"></span>
+                                </div>                                <div class="col-md-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="artistsModal" class="modal" tabindex="-1" role="dialog">
+    <div  class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Artist</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span id="closeArtistFormBtn" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" id="artistsFormId" value="">
+
+                    <div class="form-group">
+                        <label for="artistsFormName">Name</label>
+                        <input type="text" class="form-control" id="artistsFormName" aria-describedby="emailHelp"
+                               placeholder="Enter Name">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="artistsFormSaveBtn" type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="addArtistModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Artist</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="addArtistsFormRole" value="">
+                <div id="addArtistTable">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="addArtistsFormSaveBtn" type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/apiService.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/login.js"></script>
+<script type="text/javascript" src="./js/movies.js"></script>
+<script type="text/javascript" src="./js/artists.js"></script>
+<script type="text/javascript">
+	$( document ).ready(function() {
+        appInit();
+    });
+</script>
+</body>
+</html>

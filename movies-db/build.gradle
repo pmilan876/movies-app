@@ -1,0 +1,11 @@
+group = 'com.movies.db'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.5'
+    implementation 'com.google.guava:guava:31.0-jre'
+    testImplementation 'com.h2database:h2:1.4.200'
+    implementation 'mysql:mysql-connector-java:8.0.26'
+}

@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS movies;
+CREATE TABLE movies (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  title VARCHAR(250) NOT NULL,
+  genre VARCHAR(250) NOT NULL,
+  releaseYear int NOT NULL,
+  imdbRating VARCHAR(250) NOT NULL
+);
+DROP TABLE IF EXISTS artists;
+CREATE TABLE artists (
+    id INT AUTO_INCREMENT  PRIMARY KEY,
+    firstName VARCHAR(250) NOT NULL,
+    lastname VARCHAR(250) NOT NULL,
+    age int NOT NULL,
+    bio VARCHAR(500) NOT NULL
+);

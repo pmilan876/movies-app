@@ -1,0 +1,7 @@
+.movie-separator {
+    top: -3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 4px;
+    position: relative;
+}
