@@ -1,5 +1,5 @@
 
-var url="http://localhost:8080/api/"
+var url="http://movieapp.ddns.net:8080/api/"
 
 
 var appInit=function(){
