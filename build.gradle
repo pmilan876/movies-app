@@ -16,6 +16,15 @@ subprojects {
         mavenCentral()
     }
 
+
+    jar {
+        manifest {
+            attributes(
+                    'Main-Class': 'com.movies.api.MovieApplication'
+            )
+        }
+    }
+
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'com.fasterxml.jackson.core:jackson-core:2.13.0'
