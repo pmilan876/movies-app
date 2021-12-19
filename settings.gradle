@@ -1,4 +1,4 @@
-rootProject.name = 'Movie'
+rootProject.name = 'movie-app'
 include 'movies-db'
 include 'movies-api'
 
