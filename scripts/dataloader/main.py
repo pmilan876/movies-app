@@ -47,7 +47,7 @@ def extract(url, genre):
             image_url = soup.findAll("img", class_="MediaViewerImagestyles__PortraitImage-sc-1qk433p-0")[0]["src"]
             movie["image_url"] = image_url
             print(movie)
-            requests.post("http://localhost:8080/api/load/movie", json=movie)
+            requests.post("http://movieapp.ddns.net:8080/api/load/movie", json=movie)
     print(movies)
 
 
