@@ -75,17 +75,7 @@ var renderUserMovies=function(moviesJson){
             "<button movie-id='"+ movieJson["id"] +"' type='button' style='bottom: 5px; position: absolute;  width: 150px; margin-left: -75px;' class='btn btn-outline-dark btn-sm movie-detail'>Detail</button>"+
           '</div>'+
         '</div>';
-//
-//		tableHtml+= "<tr>"+
-//			"<td style=\"text-align:center;\"><img src=\""+ movieJson["imageUrl"] +"\" style=\"width:50px\"></td>"+
-//			"<td>"+ movieJson["title"] +"</td>"+
-//			"<td>"+ movieJson["genre"] +"</td>"+
-//			"<td>"+ movieJson["releaseYear"] +"</td>"+
-//			"<td>"+ movieJson["imdbRating"] +"</td>"+
-//			"<td>"+
-//			"<button movie-id='"+ movieJson["id"] +"' type='button' style='margin-right:10px;' class='btn btn-info btn-sm movie-detail'>Detail</button>"+
-//			"</td>"
-//		"</tr>"
+
 	}
         html+="</div>"+
     "</div>"
