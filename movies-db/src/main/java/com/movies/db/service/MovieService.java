@@ -42,6 +42,10 @@ public class MovieService {
     }
 
     public void delete(Long id) {
+        List<MovieArtist> movieArtists = movieArtistRepository.findByMovieId(id);
+        for(MovieArtist movieArtist : movieArtists){
+            movieArtistRepository.deleteById(movieArtist.getId());
+        }
         movieRepository.deleteById(id);
     }
 
