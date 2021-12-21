@@ -15,5 +15,5 @@ Notes:
 4. The database was filled using the python script under the scripts directory.
 5. Unit Testing code can be found under the movies-db/src/test directory.
 6. All of the Api related code(controller, JWT, O Auth) code can be found in the movies-api directory.
-7. Db related code(entity, repository, services) code can be founf in the movies-db directory.
+7. Db related code(entity, repository, services) code can be found in the movies-db directory.
 
