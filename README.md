@@ -1,8 +1,12 @@
 # movies-app
+Update:
+The URL doesn't work anymore since the amazon ec2 instance was shut down from my end.
 
+---------------------------------------------------------------------------------------------------------------------
 To access Movie App live, visit following url:
 
         http://movieapp.ddns.net:8080/ui/index.html
+
 
 
 You will be redirected to google login page.
